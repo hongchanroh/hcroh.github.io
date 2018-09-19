@@ -15,7 +15,8 @@ https://developer.ibm.com/code/2016/11/10/exploring-apache-spark-datasource-api/
 * overall introduction: http://blog.madhukaraphatak.com/spark-datasource-v2-part-1/
 
 * no data source interface (scala version) has been changed (sql/datasources/interfaces.scala
-```scala
+
+<pre><code class="scala">
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -331,11 +332,12 @@ trait InsertableRelation {
 trait CatalystScan {
   def buildScan(requiredColumns: Seq[Attribute], filters: Seq[Expression]): RDD[Row]
 }
-```
+</code></pre>
 
 * Catalyst Scan
 DataSourceStrategy choose what interface will be executed (prunedScan/FilteredPrunedScan/CatalystScan)
-```scala
+
+<pre><code class="scala">
 /**
  * A Strategy for planning scans over data sources defined using the sources API.
  */
@@ -379,11 +381,11 @@ case class DataSourceStrategy(conf: SQLConf) extends Strategy with Logging with 
     case _ => Nil
   }
 
-```
+</code></pre>
 
 Only one of CatalystScan or PrunedFilteredScan should be chosen
 
-```scala
+<pre><code class="scala">
 // Based on Catalyst expressions. The `scanBuilder` function accepts three arguments:
   //
   //  1. A `Seq[Attribute]`, containing all required column attributes. Used to handle relation
@@ -464,4 +466,4 @@ Only one of CatalystScan or PrunedFilteredScan should be chosen
         projects, filterCondition.map(execution.FilterExec(_, scan)).getOrElse(scan))
     }
   }
-```
+</code></pre>
