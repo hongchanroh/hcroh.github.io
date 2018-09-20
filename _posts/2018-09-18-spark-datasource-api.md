@@ -17,7 +17,7 @@ https://developer.ibm.com/code/2016/11/10/exploring-apache-spark-datasource-api/
 * no data source interface (scala version) has been changed (sql/datasources/interfaces.scala
 
 {% highlight scala %}
-
+```scala
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -333,12 +333,14 @@ trait InsertableRelation {
 trait CatalystScan {
   def buildScan(requiredColumns: Seq[Attribute], filters: Seq[Expression]): RDD[Row]
 }
+```
 {% endhighlight %}
 
 * Catalyst Scan
 DataSourceStrategy choose what interface will be executed (prunedScan/FilteredPrunedScan/CatalystScan)
 
-<pre><code class="scala">
+{% highlight scala %}
+```scala
 /**
  * A Strategy for planning scans over data sources defined using the sources API.
  */
@@ -467,4 +469,5 @@ Only one of CatalystScan or PrunedFilteredScan should be chosen
         projects, filterCondition.map(execution.FilterExec(_, scan)).getOrElse(scan))
     }
   }
-</code></pre>
+```
+{% endhighlight %}
