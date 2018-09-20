@@ -16,11 +16,7 @@ https://developer.ibm.com/code/2016/11/10/exploring-apache-spark-datasource-api/
 
 * no data source interface (scala version) has been changed (sql/datasources/interfaces.scala
 
-{% highlight c++ %}
-int a = 1;
-int b = a >> 10;
-{% endhighlight %}
-
+{% highlight scala %}
 <pre><code class="scala">
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -338,6 +334,7 @@ trait CatalystScan {
   def buildScan(requiredColumns: Seq[Attribute], filters: Seq[Expression]): RDD[Row]
 }
 </code></pre>
+{% endhighlight %}
 
 * Catalyst Scan
 DataSourceStrategy choose what interface will be executed (prunedScan/FilteredPrunedScan/CatalystScan)
