@@ -17,7 +17,7 @@ https://developer.ibm.com/code/2016/11/10/exploring-apache-spark-datasource-api/
 * no data source interface (scala version) has been changed (sql/datasources/interfaces.scala
 
 {% highlight scala %}
-<pre><code class="scala">
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -333,7 +333,6 @@ trait InsertableRelation {
 trait CatalystScan {
   def buildScan(requiredColumns: Seq[Attribute], filters: Seq[Expression]): RDD[Row]
 }
-</code></pre>
 {% endhighlight %}
 
 * Catalyst Scan
