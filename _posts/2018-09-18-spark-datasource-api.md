@@ -15,7 +15,13 @@ https://developer.ibm.com/code/2016/11/10/exploring-apache-spark-datasource-api/
 * overall introduction: http://blog.madhukaraphatak.com/spark-datasource-v2-part-1/
 
 * no data source interface (scala version) has been changed (sql/datasources/interfaces.scala
+{% highlight c++ %}
 
+some code here
+int a = 1;
+int b = a >> 10;
+
+{% endhighlight %}
 <pre><code class="scala">
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
