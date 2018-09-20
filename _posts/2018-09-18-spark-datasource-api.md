@@ -16,7 +16,6 @@ https://developer.ibm.com/code/2016/11/10/exploring-apache-spark-datasource-api/
 
 * no data source interface (scala version) has been changed (sql/datasources/interfaces.scala
 
-{% highlight scala %}
 ```scala
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -123,8 +122,7 @@ trait SchemaRelationProvider {
    *
    * @note The parameters' keywords are case insensitive and this insensitivity is enforced
    * by the Map that is passed to the function.
-   */
-  def createRelation(
+   */  def createRelation(
       sqlContext: SQLContext,
       parameters: Map[String, String],
       schema: StructType): BaseRelation
@@ -334,12 +332,9 @@ trait CatalystScan {
   def buildScan(requiredColumns: Seq[Attribute], filters: Seq[Expression]): RDD[Row]
 }
 ```
-{% endhighlight %}
-
 * Catalyst Scan
 DataSourceStrategy choose what interface will be executed (prunedScan/FilteredPrunedScan/CatalystScan)
 
-{% highlight scala %}
 ```scala
 /**
  * A Strategy for planning scans over data sources defined using the sources API.
@@ -470,4 +465,3 @@ Only one of CatalystScan or PrunedFilteredScan should be chosen
     }
   }
 ```
-{% endhighlight %}
