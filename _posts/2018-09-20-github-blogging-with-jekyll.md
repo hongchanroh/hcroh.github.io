@@ -1,5 +1,4 @@
-* jekyll site
-https://jekyllrb.com/docs/
+* jekyll site: http://jekyllrb.com/docs/
 * jekyll configuration
 https://jekyllrb.com/docs/configuration/
 * jekyll markdown configuration
